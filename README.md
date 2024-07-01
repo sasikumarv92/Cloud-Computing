@@ -40,8 +40,22 @@ Subnet: Default.
 Public IP: Create a new public IP.
 NIC network security group: Basic.
 Inbound port rules: Allow SSH (port 22) and HTTP (port 80).
-
-
 Review and Create: Review the settings and click "Create"
 
+
+. Set Up the Web Server
+Connect to the VM:
+
+Use SSH to connect to the VM: ssh azureuser@<Public-IP>
+Install Apache Web Server:
+
+Update the package list: sudo apt update
+Install Apache: sudo apt install apache2 -y
+Start the Apache service: sudo systemctl start apache2
+Enable Apache to start on boot: sudo systemctl enable apache2
+
+
+Verify the Installation:
+
+Open a web browser and navigate to http://<Public-IP>. You should see the default Apache welcome page.
 
